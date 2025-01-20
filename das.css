@@ -1,0 +1,335 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #ffffff;
+    height: 100%;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo */
+.logo a {
+    font-size: 3rem; /* Use rem for responsive font size */
+    font-weight: 800;
+    color: #000;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: 40px;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 10;
+    background-color: #ffcc00;
+    border-bottom: 1px solid #000;
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    justify-content: left;
+    margin-left: 20px;
+    flex-grow: 1;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 0.5rem 1rem; /* Adjust padding */
+}
+
+.menu ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1rem; /* Use rem for better scaling */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.login-signup {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    gap: 20px; 
+}
+
+
+.login-signup ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.login-signup ul li {
+    list-style: none;
+    margin-right: 10px;
+}
+
+/* Button styles */
+button {
+    padding: 0.5rem 1rem; /* Adjust padding */
+    font-size: 1rem; 
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid #000000;
+    outline: none;
+}
+
+/* Login button (normal button) */
+.btn-login {
+    background-color: #000000; /* Green background */
+    color: white;
+}
+
+.btn-login:hover {
+    background-color: #b7ae05; /* Darker green when hovered */
+}
+
+.btn-login a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Signup button (border-only button) */
+.btn-signup {
+    background-color: transparent; /* Transparent background */
+    color: #000000; /* Green text color */
+}
+
+.btn-signup:hover {
+    background-color: #000000; /* Green background when hovered */
+    color: white; /* White text on hover */
+}
+
+.btn-signup a{
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Responsive - If you want the buttons to be stacked on smaller screens */
+@media (max-width: 768px) {
+    .login-signup {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center align buttons */
+    }
+
+    button {
+        width: 50px; /* Full width buttons on small screens */
+        height: 30px;
+        margin-bottom: 10px; /* Add margin between stacked buttons */
+        font-size: 0.6rem; /* Adjust font size for smaller screens */
+        padding: 0;
+    }
+}
+
+/* Hamburger Button */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+    background-color: #000;
+    transition: all 0.3s ease;
+}
+
+/* Menu visibility on mobile */
+.menu {
+    display: flex;
+    justify-content: left;
+    flex-grow: 1;
+}
+
+.text-box {
+    width: 90%;
+    position: relative;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin-top: 130px;
+}
+
+.text-box  {
+    color: #3d2e21;
+    font-size: 1rem; /* Use viewport width for responsive text */
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+}
+
+/* Media Query for Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Hide the menu by default */
+    .menu {
+        display: none;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu ul {
+        flex-direction: column; /* Stack items vertically */
+        width: 100%;
+    }
+
+    .menu ul li {
+        margin: 15px 0;
+    }
+
+    .menu-toggle {
+        display: flex; /* Show hamburger icon on mobile */
+    }
+
+    .menu.active {
+        display: flex; /* Show menu when active */
+    }
+
+    /* Animation for Hamburger Icon (Cross) */
+    .menu-toggle.open .bar:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 6px;
+    }
+
+    .menu-toggle.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.open .bar:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -6px;
+    }
+
+    /* Adjust the logo size on mobile */
+    .logo a {
+        font-size: 2.5rem; /* Adjust size for mobile */
+    }
+
+    .text-box{
+        margin-bottom: 1px
+    }
+    /* Adjust description size for mobile */
+    .text-box .deskripsi {
+        font-size: 6vw; 
+        
+    }
+}
+
+.search {
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;        /* Make sure the wrapper takes the full height of the viewport */
+}
+
+.search-container {
+    display: flex;
+    justify-content: center; /* Center the input and button inside the container */
+    align-items: center;     /* Center vertically the input and button */
+    margin: 20px;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    padding: 5px 15px;
+    background-color: #f9f9f9;
+    width: 70%; /* Adjust the width as necessary */
+}
+
+.search-input {
+    border: 1px solid #000000;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 25px;
+    width: 3000px;
+    transition: width 0.3s ease;
+}
+
+.search-btn {
+    background-color: #000000;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 10px;
+    color: white;
+    font-size: 16px;
+}
+
+.search-btn a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Hover effect for the button */
+.search-btn:hover {
+    background-color: rgb(255, 232, 2);
+}
+
+/* Media Query untuk layar lebih kecil (misalnya smartphone dan tablet kecil) dengan max-width: 768px */
+@media (max-width: 768px) {
+    .search-container {
+        padding: 5px 12px;
+    }
+
+    .search-input {
+        width: 400px;  /* Ukuran input lebih kecil untuk perangkat dengan layar lebih kecil */
+        font-size: 15px;  /* Mengurangi ukuran font sedikit */
+    }
+
+    .search-btn {
+        padding: 1px;  /* Menyesuaikan ukuran tombol */
+        font-size: 15px;  /* Mengurangi ukuran font tombol */
+        border-radius: 50%;
+    }
+}
+
+.maps-container {
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;        /* Make sure the wrapper takes the full height of the viewport */
+}
+
+.mappy {
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    background-color: #f9f9f9;
+    width: 90%;
+    height: 20rem;
+}
+
